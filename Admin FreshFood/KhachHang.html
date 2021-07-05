@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sản phẩm</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/client/css/font-awesome.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="/assets/admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/assets/admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <style>.cke{visibility:hidden;}</style></head>
+    <body>
+        <div id="wrapper">
+            <!-- Navigation -->
+            
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">FRESHFOOD</a>
+                </div>
+                <!-- /.navbar-header -->
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <form action="/Admin/Base/ChangeCulture" method="post"><input id="returnUrl" name="returnUrl" type="hidden" value="/Admin/User/Index"><select id="ddlCulture" name="ddlCulture" onchange="this.form.submit();"><option selected="selected" value="vi">Tiếng Việt</option>
+                            <option value="en">Tiếng Anh</option>
+                        </select></form>        </li>
+                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong>John Smith</strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend/assets/admin.</div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong>John Smith</strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend/assets/admin.</div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong>John Smith</strong>
+                                            <span class="pull-right text-muted">
+                                                <em>Yesterday</em>
+                                            </span>
+                                        </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend/assets/admin.</div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="text-center" href="#">
+                                        <strong>Read All Messages</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-messages -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>
+                                                <strong>Task 1</strong>
+                                                <span class="pull-right text-muted">40% Complete</span>
+                                            </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>
+                                                <strong>Task 2</strong>
+                                                <span class="pull-right text-muted">20% Complete</span>
+                                            </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>
+                                                <strong>Task 3</strong>
+                                                <span class="pull-right text-muted">60% Complete</span>
+                                            </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                    <span class="sr-only">60% Complete (warning)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>
+                                                <strong>Task 4</strong>
+                                                <span class="pull-right text-muted">80% Complete</span>
+                                            </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="text-center" href="#">
+                                        <strong>See All Tasks</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-tasks -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-comment fa-fw"></i> New Comment
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                            <span class="pull-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> New Task
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="text-center" href="#">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-alerts -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-user -->
+                        </li>
+                        <!-- /.dropdown -->
+                    </ul>
+                    <!-- /.navbar-top-links -->
+                    <div class="navbar-default sidebar" role="navigation">
+                        <div class="sidebar-nav navbar-collapse">
+                            <ul class="nav" id="side-menu">
+                                <li class="sidebar-search">
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" class="form-control" placeholder="Search.">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </li>
+                                <li>
+                                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-user fa-fw"></i> Hệ thống<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="GroupUser.html">Nhóm người dùng</a>
+                                        </li>
+                                        <li>
+                                            <a href="User.html">User</a>
+                                        </li>
+                                        <li>
+                                            <a href="BinhLuan.html">Bình luận</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-comment fa-fw"></i> Tin tức<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="TinTuc.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="TinTuc.html">Tin tức</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bell fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="SanPham.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tin tức</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-money fa-fw"></i> Hóa đơn nhập<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="HoaDonNhap.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="ChiTietHoaDon">Chi tiết hóa đơn</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-money fa-fw"></i> Đơn đặt hàng<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="DonDatHang.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="ChiTietDonHang">Chi tiết đơn hàng</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bell fa-fw"></i> Khách hàng<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="KhachHang.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tin tức</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bell fa-fw"></i> Nhà cung cấp<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="NhaCungCap.html">Danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tin tức</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý chung<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level collapse">
+                                        <li>
+                                            <a href="/Admin/About/Index">Giới thiệu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Footer/Index">Foooter</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Footer/Index">Menu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Footer/Index">Slide</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Footer/Index">Phản hồi</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.sidebar-collapse -->
+                    </div>
+                    <!-- /.navbar-static-side -->
+                </nav>
+                <!-- Page Content -->
+                <div id="page-wrapper" style="min-height: 223px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Danh sách khách hàng
+                                </h1>
+                            </div>
+                            <!-- /.col-lg-12 -->
+                        </div>
+                        <!-- /.row -->
+                        
+                        
+                        
+                        <div class="row">
+                            
+                            <div class="col-lg-12">
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Danh sách khách hàng
+                                    </div>
+                                    
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+                                        <form action="/Admin/User" method="get">                    
+                                            <div class="row form-group">
+                                                <div class="col-lg-12">
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" name="searchString">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                                                        <a class="btn btn-primary" href="/Admin/User/Create">Thêm mới</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover" style="text-align: center;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Mã khách hàng</th>
+                                                        <th>Tên khách hàng</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Số điện thoại</th>
+                                                        <th>Email</th>
+                                                        <th>#</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="row_21">
+                                                        <td>KH01</td>
+                                                        <td>Nguyễn Thị Mai</td>
+                                                        <td>Mỹ Hào - Hưng Yên</td>
+                                                        <td>0967543546</td>
+                                                        <td>mainguyen@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/21">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_21').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/21">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_20">
+                                                        <td>KH02</td>
+                                                        <td>Nguyễn Văn Anh</td>
+                                                        <td>Yên Mỹ - Hưng Yên</td>
+                                                        <td>0986545674</td>
+                                                        <td>anhnguyen@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/20">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_20').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/20">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_19">
+                                                        <td>KH03</td>
+                                                        <td>Trần Thế Thái</td>
+                                                        <td>Kim Động - Hưng Yên</td>
+                                                        <td>0987321456</td>
+                                                        <td>thethai2k@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/19">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_19').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/19">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_18">
+                                                        <td>KH04</td>
+                                                        <td>Cao Văn Linh</td>
+                                                        <td>Văn Lâm - Hưng Yên</td>
+                                                        <td>0956456763</td>
+                                                        <td>linhhy@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/18">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_18').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/18">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_17">
+                                                        <td>KH05</td>
+                                                        <td>Đinh Trọng Nghĩa</td>
+                                                        <td>Ân Thi - Hưng Yên</td>
+                                                        <td>0985453456</td>
+                                                        <td>trongnghia@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/17">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_17').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/17">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_16">
+                                                        <td>KH06</td>
+                                                        <td>Trần Thị Yến Ninh</td>
+                                                        <td>Văn Lâm - Hưng Yên</td>
+                                                        <td>0876785465</td>
+                                                        <td>yenninh@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/16">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_16').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/16">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_15">
+                                                        <td>KH07</td>
+                                                        <td>Ngô Văn Thịnh</td>
+                                                        <td>Gia Lộc - Hải Dương</td>
+                                                        <td>0987675432</td>
+                                                        <td>ngothinh@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/15">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_15').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/15">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_14">
+                                                        <td>KH08</td>
+                                                        <td>Khúc Chí Thiện</td>
+                                                        <td>Trâu Quỳ - Hà Nội</td>
+                                                        <td>0987678546</td>
+                                                        <td>chithien@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/14">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_14').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/14">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_13">
+                                                        <td>KH09</td>
+                                                        <td>Lý Cao Thượng</td>
+                                                        <td>Thái Thụy - Thái Bình</td>
+                                                        <td>0987867542</td>
+                                                        <td>lythuong@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/13">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_13').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/13">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="row_12">
+                                                        <td>KH010</td>
+                                                        <td>Triệu Thái Sơn</td>
+                                                        <td>Từ Sơn - Bắc Ninh</td>
+                                                        <td>0978654321</td>
+                                                        <td>thaison@gmail.com</td>
+                                                        <td>
+                                                            <a href="/Admin/User/Edit/12">Sửa</a>
+                                                            |
+                                                            <a data-ajax="true" data-ajax-complete="$('#row_12').remove()" data-ajax-confirm="Bạn có muốn xoá bản ghi này?" data-ajax-method="Delete" href="/Admin/User/Delete/12">Xoá</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination-container"><ul class="pagination"><li class="active"><a>1</a></li><li><a href="/Admin/User?page=2">2</a></li><li class="PagedList-skipToNext"><a href="/Admin/User?page=2" rel="next">»</a></li></ul></div>
+                                        </div>
+                                        <!-- /.table-responsive -->
+                                    </div>
+                                    <!-- /.panel-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /#page-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+            <!-- jQuery -->
+            <script src="/assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
+            <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="/assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="/assets/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+            <script src="/assets/admin/js/plugins/ckfinder/ckfinder.js"></script>
+            <script src="/assets/admin/js/plugins/ckeditor/ckeditor.js"></script>
+            <!-- Custom Theme JavaScript -->
+            <script src="/assets/admin/dist/js/sb-admin-2.js"></script>
+            
+            <script src="/assets/admin/js/controller/userController.js"></script>
+        </body>
+        </html>

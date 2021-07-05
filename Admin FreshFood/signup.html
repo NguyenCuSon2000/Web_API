@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input,
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button{
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    body {
+        width: 300px;
+        margin: 0 auto;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/admin/js/script.js"></script>
+  <!-- ANGULAR JS -->
+    <script src="./script/angular.min.js"></script>
+    <script src="./script/global.js"></script>
+    <script src="./controllers/user.js"></script>
+     <script src="./script/script.js"></script>
+  
+<body ng-app="AppUser" ng-controller="UserCtrl">
+    <h3>Đăng ký</h3>
+    <form ng-submit="Register()">
+        <div>
+            <label for="hoten">Họ tên</label>
+            <input type="text" id="hoten" ng-model="hoten" name="hoten" placeholder="Nhập họ tên">
+            <label for="tailkhoan">Tài khoản</label>
+            <input type="text" id="taikhoan" name="taikhoan" ng-model="taikhoan" placeholder="Nhập tài khoản..">
+            <label for="matkhau">Mật khẩu</label>
+            <input type="password" id="matkhau" name="matkhau" ng-model="matkhau" placeholder="Nhập mật khẩu..">
+          
+            <button type="submit">Đăng ký</button>
+            <a href="login.html" style="text-align: center; margin: 29%;">Đăng nhập ngay</a>
+            <label id="err" style="color: red;"></label>
+        </div>
+    </form>
+
+</body>
+
+</html>

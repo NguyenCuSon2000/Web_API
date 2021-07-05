@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/stype.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Đồng hồ nam</a></li>
+                <li><a href="#">Đồng hỗ nữ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="cart.html">Giở hàng</a></li>
+                <li><a style="color: red;" href="#" onclick="XoaCart()">Xóa Giở hàng</a></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="col-8 col-s-12">
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th colspan="3">Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tông</th>
+                    </tr>
+                </thead>
+                <tbody id="listCart">
+                    <!-- <tr>
+                        <td>2</td>
+                        <td><img style="width: 50px; height: 50px;" src="image/product-03.png"> </td>
+                        <td>Classico 01</td>
+                        <td>5000000</td>
+                        <td >
+                            <button>-</button>
+                            <input type="text" style="width: 30px;" >
+                            <button>+</button>
+                        </td>
+                        <td>5000000</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div class="abc">
+                <button onclick="updateCart()">CẬP NHẬT GIỞ HÀNG</button>
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            <div>Tổng số lượng</div>
+            <div>
+                <span>Tổng phụ</span>
+                <span>5000</span>
+            </div>
+            <div>
+                <span>Giao hàng miễn phí</span>
+            </div>
+            <div>
+                <span>Tổng</span>
+                <span id="spTong">5000</span>
+            </div>
+            <div>
+                <button onclick="ThanhToan()">Tiến hành thanh toán</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function ThanhToan() {
+            window.location.href = "thanhtoan.html";
+        }
+        var list = JSON.parse(localStorage.getItem('cart'));
+        function LoadData() {
+            var str = "";
+            var n = 0;
+            var t = 0;
+            for (x of list) {
+                t += x.price * x.quantity;
+                str += `<tr>
+                        <td><i onclick="Xoa(`+ x.id + `)" class="fa fa-times-circle" style="font-size:30px;color:red;cursor: pointer;"></i></td>
+                        <td><img style="width: 50px; height: 50px;" src="`+ x.image + `"> </td>
+                        <td>`+ x.name + `</td>
+                        <td>`+ x.price + `</td>
+                        <td> 
+                            <button onclick="Giam(`+ x.id + `)">-</button>
+                            <input id="q_`+ Number(x.id)+`" onchange="updateQuantity(`+ x.id + `)" type="text" value="`+ x.quantity + `" style="width: 30px;" >
+                            <button onclick="Tang(`+ x.id + `)">+</button>
+                        </td>
+                        <td>`+ (x.price * x.quantity) + `</td>
+                    </tr>
+                 `;
+            }
+            document.getElementById("listCart").innerHTML = str;
+            $("#spTong").text(t);
+        }
+        function XoaCart() {
+            localStorage.setItem('cart', null);
+            location.reload();
+        }
+        function Xoa(id) {
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0) {
+                list.splice(index, 1);
+            }
+            LoadData();
+        }
+        function updateCart() {
+            localStorage.setItem('cart', JSON.stringify(list));
+             alert("Đã cập nhật thông tin giở hàng thành công");
+        }
+        function Tang(id) {
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0) {
+                list[index].quantity += 1; 
+            }
+            LoadData();
+        }
+        function Giam(id) {
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity -= 1; 
+            }
+            LoadData();
+        }
+        function updateQuantity(id) {
+            var quantity = Number($('#q_'+id).val());
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity = quantity; 
+            }
+            LoadData();
+        }
+        LoadData();
+    </script>
+
+</body>
+
+</html>

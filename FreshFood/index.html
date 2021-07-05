@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./script/script.js"></script>
+    <link rel="stylesheet" href="./font/fontawesome-free-5.13.0/css/all.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script async type="text/javascript" src="https://panel.chatcompose.com/static/EN/global/export/js\main.dec259c7.js" user="SonNguyen"></script>   -->
+   
+    <script src="./assets/js/angular.min.js"></script>
+    <script src="./assets/js/global.js"></script>
+    <script src="./controllers/home.js"></script>
+    <script src="./script/dirPagination.js"></script>
+    <script src="./script/ui-bootstrap-tpls-2.5.0.min.js"></script>
+</head>
+<body ng-app="AppHome" ng-controller="HomeCtrl">
+    <header>
+        <div class=" container header-top">
+            <div class="row">
+                <div class="col-sm-4 header-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="col-sm-8 header-info">
+                    <div class="header-cart">
+                        <a href="GioHang.html">
+                            <span class="icon-start">
+                                <img src="img/icon-cart.png" alt="">
+                            </span>
+                            <span class="cart-number">0</span>
+                        </a>
+                        <div class="form_holder">
+                            <div class="cart-block">
+                                <div class="cart-block-content">
+                                    <div class="cart-block-list">
+                                        <div class="shop_cart">
+                                            <table class="shop_table">
+                                                <tr>
+                                                    <th>Mã sã phẩm</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Đơn giá</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>SP01</td>
+                                                    <td>2</td>
+                                                    <td>30000 VND</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="cart-view clearfix">
+                            <table id="clone-item-cart" class="table-clone-cart">
+                                <tbody>
+                                    <tr class="item_2 hidden">
+                                        <td class="img">
+                                            <a href="" title=""><img src="" alt=""></a>
+                                        </td>
+                                        <td>
+                                            <a class="pro-title-view" href="" title=""></a>
+                                            <span class="variant"></span>	
+                                            <span class="pro-quantity-view"></span>
+                                            <span class="pro-price-view"></span>
+                                            <span class="remove_link remove-cart"></span>				
+                                        </td>
+                                    </tr>   
+                                </tbody>
+                            </table>
+                            <table id="cart-view">
+                                
+                                <tbody>
+                                    <tr>
+                                        <td>Hiện chưa có sản phẩm</td>								
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <span class="line"></span>
+                            <table class="table-total">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">TỔNG TIỀN:</td>
+                                        <td class="text-right" id="total-view-cart">0₫</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/cart" class="linktocart">Xem giỏ hàng</a></td>
+                                        <td><a href="/checkout" class="linktocheckout">Thanh toán</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> -->
+                    </div>
+                    <div class="header-subnav">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> 1900.636.099</li>
+                            <li><a href="../Admin FreshFood/signup.html">ĐĂNG KÝ</a></li>
+                            <li><a href="../Admin FreshFood/login.html">ĐĂNG NHẬP</a></li>
+                        </ul>
+                        <p>Miễn phí vận chuyển <span>ĐƠN HÀNG TRÊN 900K</span> </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #ebebeb; width: 100%;"></div>
+        <nav class="menu" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 navbar" ng-init="LoadMenu()">
+                        <ul>
+                            <li><a href="index.html" class="active">Trang chủ</a></li>
+                            <li>
+                                <a href="SanPham.html">Sản phẩm <i class="fas fa-sort-down"></i></a>
+                                <ul>
+                                    <li ng-repeat="x in listMenu">
+                                        <!-- <a href="LoadProductByCate(x.maLoaiSP)">{{ x.tenLoai }}</a> -->
+                                        <a href="SanPham.html?{{x.maLoaiSP}}">{{ x.tenLoai }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                            <li><a href="TinTuc.html">Tin tức</a></li>
+                            <li><a href="LienHe.html">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md -12 col-sm-4 Search">
+                        <div class="search-bar">
+                            <div class="">
+                                <form action="/search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="text" name="q" placeholder="Tìm kiếm..." autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-banner">
+            <!-- <a href=""><img src="images/TrangAn-banner.jpg" alt="TrangAn-banner.jpg"></a> -->
+           
+            <div id="carouselId" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselId" data-slide-to="1"></li>
+                    <li data-target="#carouselId" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/Slide1_image.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Slide2_image.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Slide3_image.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- PHẦN NỘI DUNG -->
+    <section class="content container">
+        <div class="row">
+            <div class="content_SanPham">
+                <aside class="styled_header  use_icon ">
+                    <h3>Sản phẩm mới</h3>
+                    <span class="icon"><img src="img/icon_featured.jpg" alt="Newest trends"></span>
+                </aside>
+                
+                <article class="container info_SanPham" ng-init="LoadProductNew()">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6 San-Pham" ng-repeat="n in listNew">
+                            <div class="product-img">
+                                <a href="">
+                                    <img src="../{{n.hinhAnh}}" alt="Bắp bò Úc">
+                                </a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a ng-click="AddCart({ maSP: n.maSP, tenSP: n.tenSP, hinhAnh: n.hinhAnh, donGia: n.donGia })">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="BapCaiTim.html?maSP={{n.maSP}}" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a href="BapCaiTim.html?maSP={{n.maSP}}" class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="BapCaiTim.html?maSP={{n.maSP}}">{{ n.tenSP }}</a></p>
+                            <p><span>{{ n.donGia | number }} VND</span></p>
+                        </div>
+
+                    </div>
+                </article>
+                <article class="XemThem">
+                    <a href=""><button class="btn-outline-success btn-lg">Xem Thêm</button></a> 
+                </article>
+            </div>
+            
+            <div class="col-sm-12 quangcao">
+                <img src="img/QuangCao.png" alt="" style="width: 100%">
+            </div>
+            
+            <!-- PHẦN SẢN PHẨM MỚI-->
+            <div class="content_Moi">
+                <aside class="styled_header  use_icon ">
+                    <h3>Sản phẩm nổi bật</h3>
+                    <span class="icon"><img src="img/icon_sale.jpg" alt="Newest trends"></span>
+                </aside>
+                <article class="container info_Moi">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-6 Moi">
+                            <div class="product-img">
+                                <a href=""><img src="img/Rau/ThanhLongRuotDo.jpg" alt="Thanh long ruột đỏ"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="">Thanh long ruột đỏ</a></p>
+                            <p><span>30.000 VND</span></p>
+                            
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 Moi">
+                            <div class="product-img">
+                                <a href=""> <img src="img/FreshFood/ThitHeoXay.jpg" alt="Thịt heo xay"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="">Thịt heo xay</a></p>
+                            <p><span>20.000 VND</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 Moi">
+                            <div class="product-img">
+                                <a href=""> <img src="img/FreshFood/TomTheTuoi.jpg" alt="Tôm thẻ tươi"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="">Tôm thẻ tươi</a></p>
+                            <p><span>20.000 VND</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 Moi">
+                            <div class="product-img">
+                                <a href=""> <img src="img/Rau/XoaiTuQuy.jpg" alt="Xoài tứ quý"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="">Xoài Tứ Quý</a></p>
+                            <p><span>20.000 VND</span></p>
+                        </div>
+                    </div>
+                </article>
+                <article class="XemThem">
+                    <a href=""><button class="btn-outline-success btn-lg">Xem Thêm</button></a> 
+                </article>
+            </div>
+            
+            <!-- PHẦN KHUYẾN MÃI -->
+            <div class="content_KhuyenMai">
+                <aside class="styled_header use_icon ">
+                    <h3>Sản khuyến mãi</h3>
+                    <span class="icon"><img src="img/icon_sale.jpg" alt="Newest trends"></span>
+                </aside>
+                <article class="container info_KhuyenMai">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-6 KhuyenMai">
+                            <div class="product-sale">
+                                <span><label class="sale-lb">- </label> 22%</span>
+                            </div>
+                            <div class="product-img">
+                                <a href=""><img src="img/Rau/OiLeDaiLoan.jpg" alt="Ổi lê Đài Loan"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="name"><a href="">Ổi Lê Đài Loan</a></p> 
+                            <p class="price"><span>30.000 VND</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 KhuyenMai">
+                            <div class="product-sale">
+                                <span><label class="sale-lb">- </label> 15%</span>
+                            </div>
+                            <div class="product-img">
+                                <a href="">
+                                    <img src="img/Rau/OtChuongDaLat.jpg" alt="Ớt chuông đỏ Đà Lạt">
+                                </a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="name"><a href="">Ớt chuông đỏ Đà Lạt</a></p>
+                            <p class="price"><span>30.000 VND</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 KhuyenMai">
+                            <div class="product-sale">
+                                <span><label class="sale-lb">- </label> 20%</span>
+                            </div>
+                            <div class="product-img">
+                                <a href=""><img src="img/Rau/OtSungDaLat.jpg" alt="Ớt sừng đỏ Đà Lạt"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="name"><a href="">Ớt sừng đỏ Đà Lạt</a></p>
+                            <p class="price"><span>30.000 VND</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 KhuyenMai">
+                            <div class="product-sale">
+                                <span><label class="sale-lb">- </label> 10%</span>
+                            </div>
+                            <div class="product-img">
+                                <a href=""><img src="img/Rau/CaChuaDaLat.jpg" alt="Cà Chua Đà Lạt"></a>
+                                <div class="actionss">
+                                    <div class="btn-cart-products">
+                                        <a href="">
+                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="view-details">
+                                        <a href="/products/bap-bo-uc-gia-tay" class="view-detail"> 
+                                            <span><i class="fa fa-clone"> </i></span>
+                                        </a>
+                                    </div>
+                                    <div class="btn-quickview-products">
+                                        <a class="quickview" data-handle="/products/bap-bo-uc-gia-tay">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="name"><a href="">Cà Chua Đà Lạt</a></p>
+                            <p class="price"><span>30.000 VND</span></p>
+                        </div>
+                    </div>
+                </article>
+                <article class="XemThem">
+                    <a href=""><button class="btn-outline-success btn-lg">Xem Thêm</button></a> 
+                </article>
+            </div>
+        </div>
+        <!-- SCROLL TO TOP -->
+        <div class="Scroll">
+            <a href="#top" id="scrollToTop" title="Lên trên" style="display: block;"  onclick="scrollToTop();return false">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </a>
+        </div>
+    </section>
+    
+    <div class="container banner-bottom">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 home-category-item-1">
+                <div class="block-home-category">
+                    <a href=""><img src="img/quangcao2.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 home-category-item-2">
+                <div class="block-home-category">
+                    <a href=""><img src="img/quangcao3.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear-fix"></div>
+    
+    <!-- PHẦN FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Thời gian</h3>
+                    <hr>
+                    <div class="footer-block-content">
+                        <ul>
+                            <li>
+                                <span class="day">Thứ 2</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 3</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 4</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 5</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-2 col-xs-12 clear-sm column-item">
+                    <h3>Thông tin</h3>
+                    <hr>
+                    <ul class="inner">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="SanPham.html">Sản phẩm</a></li>
+                        <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                        <li><a href="TinTuc.html">Tin tức</a></li>
+                        <li><a href="LienHe.html">Liên hệ</a></li>		
+                    </ul>
+                </section>
+                <section class="col-sm-6 col-md-4 col-xs-12 clear-sm column-item">
+                    <h3>Liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <ul>
+                            <li>
+                                <i class="fas fa-home"></i>101B, Ki Ốt C3, Quỳnh Lôi, Hai Bà Trưng, Hà Nội
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                nguyencuson28102000@gmail.com
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i> 
+                                0963104800
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="widget-social" class="social-icons">
+                        <ul class="list-inline">
+                            <li class="li-social facebook-social">
+                                <a target="_blank" href="#" class="social-wrapper facebook" title="Facebook">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social youtube-social">
+                                <a target="_blank" href="#" class="social-wrapper youtube" title="Youtube">
+                                    <span class="social-icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social google-social">
+                                <a target="_blank" href="#" class="social-wrapper google-plus" title="Google">
+                                    <span class="social-icon">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social twitter-social">
+                                <a target="_blank"  href="#" class="social-wrapper twitter" title="Twitter">
+                                    <span class="social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social instagram-social">
+                                <a target="_blank"  href="#" class="social-wrapper instagram" title="Instagram">
+                                    <span class="social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social message-social">
+                                <a target="_blank"  href="#" class="social-wrapper message" title="Message">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Gửi liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <form name="formLienHe">
+                            <div class="form-wraper">
+                                <ul class="form-list">
+                                    <li class="feilds">
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="text" name="txtTen" id="txtTen" placeholder="Tên Của Bạn...">
+                                            </div>
+                                        </div>
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="email" name="contact[email]" id="email" placeholder="Email của bạn...">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wide feild">
+                                        <div class="input-box">
+                                            <textarea name="contact[body]" class="BinhLuan" id="txtBinhLuan" cols="10" rows="7" placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="buttons-set">
+                                <button type="submit" title="Send" class="button" onclick="KiemTra()">
+                                    <span>Gửi</span>
+                                </button>
+                                <button type="reset" class="button" value="Reset">
+                                    <span>Hủy</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="footer__Copyright">
+            <span >Copyright by &copy; 2020 Nguyen Cu Son</span><br>
+            <span>nguyencuson2000.github.io</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="CSS/SanPham.css">
+    <link rel="stylesheet" href="CSS/GioHang.css">
+    <script src="./script/script.js"></script>
+    <link rel="stylesheet" href="./font/fontawesome-free-5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+<body>
+    <header>
+        <div class=" container header-top">
+            <div class="row">
+                <div class="col-sm-4 header-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="col-sm-8 header-info">
+                    <div class="header-cart">
+                        <a href="GioHang.html">
+                            <span class="icon-start">
+                                <img src="img/icon-cart.png" alt="">
+                            </span>
+                            <span class="cart-number">0</span>
+                        </a>
+                    </div>
+                    <div class="header-subnav">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> 1900.636.099</li>
+                            <li><a href="SignUp.html">ĐĂNG KÝ</a></li>
+                            <li><a href="Login.html">ĐĂNG NHẬP</a></li>
+                        </ul>
+                        <p>Miễn phí vận chuyển <span>ĐƠN HÀNG TRÊN 900K</span> </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #ebebeb; width: 100%;"></div>
+        <nav class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 navbar">
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li>
+                                <a href="SanPham.html" class="active">Sản phẩm <i class="fas fa-sort-down"></i></a>
+                                <ul>
+                                    <li>
+                                        <a href="">Rau củ quả</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Thực phẩm tươi sống</a>
+                                    </li>
+                                    <li><a href="">Thực phẩm khô</a></li>
+                                    <li><a href="">Thực phẩm bổ dưỡng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                            <li><a href="TinTuc.html">Tin tức</a></li>
+                            <li><a href="LienHe.html">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md -12 col-sm-4 Search">
+                        <div class="search-bar">
+                            <div class="">
+                                <form action="/search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="text" name="q" placeholder="Tìm kiếm..." autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="wrap-breadcrumb">
+        <div class="clearfix container">
+            <div class="row main-header">							
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5  ">
+                    <ol class="breadcrumb breadcrumb-arrows">
+                        <li><a href="index.html" target="_self">Trang chủ</a></li>
+                        <li><a href="/" target="_self">Giỏ hàng</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- PHẦN GIỎ HÀNG -->
+    <section class="container GioHang">
+        <div class="row">
+            
+            <div class="col-sm-8">
+                <h3>Thông tin khách hàng</h3>
+                <form action="" method="get">
+                    <div class="form-group">
+                        <label for="">Họ tên</label>
+                        <input ng-model="order.ho_ten" type="text" name="" id="" class="form-control" placeholder="Nhập họ tên " aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Địa chỉ</label>
+                        <input ng-model="order.dia_chi" type="text" name="" id="" class="form-control" placeholder="Nhập địa chỉ" aria-describedby="helpId">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <h3>ĐƠN HÀNG CỦA BẠN</h3>
+                <div class="row thanhtoan">
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label>SẢN PHẨM</label>
+                    </div>
+                    <div class="col-sm-4" style="text-align: right;">
+                        <label>TỔNG</label>
+                    </div>
+                </div>
+                
+                <div id="spham">
+                    
+                </div>
+                
+                <div class="row thanhtoan">
+                    <div class="col-6 col-s-12" style="text-align: left;">
+                        <label>Tổng</label>
+                    </div>
+                    <div class="col-6 col-s-12" style="text-align: right;">
+                        <label id="tt">0</label>đ
+                    </div>
+                </div>
+                <div class="row thanhtoan">
+                    <div class="col-12 col-s-12" style="text-align: left;">
+                        <button class="btn btn-success" onclick="DatHang()">ĐẶT HÀNG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Scroll">
+            <a href="#top" id="scrollToTop" title="Lên trên" style="display: block;"  onclick="scrollToTop();return false">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </a>
+        </div>
+    </section>
+    
+    <div class="clear-fix"></div>
+    
+    
+    <!-- PHẦN FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Thời gian</h3>
+                    <hr>
+                    <div class="footer-block-content">
+                        <ul>
+                            <li>
+                                <span class="day">Thứ 2</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 3</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 4</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 5</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-2 col-xs-12 clear-sm column-item">
+                    <h3>Thông tin</h3>
+                    <hr>
+                    <ul class="inner">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="SanPham.html">Sản phẩm</a></li>
+                        <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                        <li><a href="TinTuc.html">Tin tức</a></li>
+                        <li><a href="LienHe.html">Liên hệ</a></li>		
+                    </ul>
+                </section>
+                <section class="col-sm-6 col-md-4 col-xs-12 clear-sm column-item">
+                    <h3>Liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <ul>
+                            <li>
+                                <i class="fas fa-home"></i>101B, Ki Ốt C3, Quỳnh Lôi, Hai Bà Trưng, Hà Nội
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                nguyencuson28102000@gmail.com
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i> 
+                                0963104800
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="widget-social" class="social-icons">
+                        <ul class="list-inline">
+                            <li class="li-social facebook-social">
+                                <a target="_blank" href="#" class="social-wrapper facebook" title="Facebook">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social youtube-social">
+                                <a target="_blank" href="#" class="social-wrapper youtube" title="Youtube">
+                                    <span class="social-icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social google-social">
+                                <a target="_blank" href="#" class="social-wrapper google-plus" title="Google">
+                                    <span class="social-icon">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social twitter-social">
+                                <a target="_blank"  href="#" class="social-wrapper twitter" title="Twitter">
+                                    <span class="social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social instagram-social">
+                                <a target="_blank"  href="#" class="social-wrapper instagram" title="Instagram">
+                                    <span class="social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social message-social">
+                                <a target="_blank"  href="#" class="social-wrapper message" title="Message">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Gửi liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <form name="formLienHe">
+                            <div class="form-wraper">
+                                <ul class="form-list">
+                                    <li class="feilds">
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="text" name="txtTen" id="txtTen" placeholder="Tên Của Bạn...">
+                                            </div>
+                                        </div>
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="email" name="contact[email]" id="email" placeholder="Email của bạn...">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wide feild">
+                                        <div class="input-box">
+                                            <textarea name="contact[body]" class="BinhLuan" id="txtBinhLuan" cols="10" rows="7" placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="buttons-set">
+                                <button type="submit" title="Send" class="button" onclick="KiemTra()">
+                                    <span>Gửi</span>
+                                </button>
+                                <button type="reset" class="button" value="Reset">
+                                    <span>Hủy</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="footer__Copyright">
+            <span >Copyright by &copy; 2020 Nguyen Cu Son</span><br>
+            <span>nguyencuson2000.github.io</span>
+        </div>
+    </footer>
+    
+    <script>
+        function formatCash(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+        var list = JSON.parse(localStorage.getItem('cart'));
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+        function DatHang() {
+            var hodem = $('#txt_hdem').val();
+            if (hodem == null || hodem == '' || hodem.length > 30) {
+                $('#s_hdem').html('Sai định dạng họ đệm');
+            } else {
+                $('#s_hdem').html('*');
+            }
+            var email = $('#txt_email').val();
+            if (email != '' && !validateEmail(email)) {
+                $('#s_email').html('Sai định dạng email');
+            } else {
+                $('#s_email').html('');
+            }
+            //Print
+            var str = `
+            <section style="text-align: center;">
+                <h1>HÓA ĐƠN GIÁ TRỊ GIA TĂNG</h1>
+            </section>
+            <div style="font-style: italic;">
+                05 tháng 05 năm 2021        
+            </div>
+            <div class="donvi">Tên đơn vị bán hàng: Công ty ABC</div>
+            <div>Người mua hàng:`+hodem+`</div>
+            <div>Email:`+email+`</span></div>
+            <table style="width: 100%;">
+                <tr>
+                    <th>Tên hàng</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiên</th>
+                </tr>            
+                `;
+                var n = 0;
+                for (x of list) {
+                    str += `
+                    <tr>
+                        <td>`+(++n)+`</td>
+                        <td>`+x.tenSP+`</td>
+                        <td>`+x.quantity+`</td>
+                        <td>`+ (x.donGia * x.quantity) +`</td>
+                    </tr>
+                    `;
+                }
+                str += `</table>
+                <img src="image/product-02.png">
+                `;
+                // printHtml(str);
+                // printHtmlWithUrl('cart.html')
+            }
+            function LoadData() {
+                var str = "";
+                var t = 0;
+                for (x of list) {
+                    t += x.donGia * x.quantity;
+                    str += `
+                    <div class="row thanhtoan">
+                        <div class="col-6 col-s-12" style="text-align: left;">
+                            <label>` + x.tenSP + `*` + x.quantity + `</label>
+                        </div>
+                        <div class="col-6 col-s-12" style="text-align: right;">
+                            <label>`+ (x.donGia * x.quantity) + `đ</label>
+                        </div>
+                    </div>
+                    `;
+                }
+                $('#spham').html(str);
+                $('#tt').html(t);
+            }
+            LoadData();
+            function printHtml(data) {
+                let popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+                popupWin.document.write(
+                ` <html>
+                <head>
+                    <title>Print tab</title>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        table {
+                            width: 100%;
+                        }
+                        .donvi {
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+                        body {
+                            width: 1000px;
+                            margin: 0 auto;
+                        }
+                    </style>
+                </head>
+                <body onload="window.print();window.close()">${data}</body>
+                </html>`
+                );
+                popupWin.document.close();
+            }
+            function printHtmlWithUrl(url) {
+                debugger;
+                let newWindow = window.open(url, '_blank', 'top=0,left=0,height=100%,width=auto');
+                newWindow.focus();
+                newWindow.print();
+                newWindow.close();
+            }
+        </script>
+    </body>
+    </html>
+    
+    

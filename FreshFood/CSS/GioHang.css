@@ -1,0 +1,101 @@
+.container.GioHang .row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.GioHang{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.GioHang img{
+    width: 100px;
+    height: 100px;
+}
+
+
+.GioHang h4{
+    font-size: 15px;
+    color: #444444;
+    font-family: 'Roboto';
+}
+
+.GioHang table{
+    width: 100%;
+    border-spacing: 0px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.GioHang table th{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.GioHang table tr td {
+    border-top: 1px solid #dddddd;
+    color: #444444;
+    font-family: 'Lobster Two';
+    font-weight: 700;
+}
+
+.GioHang table tr td a{
+    font-family: 'Lobster Two';
+    font-weight: 700;
+}
+
+#number{
+    width: 60px;
+    text-align: center;
+}
+.item a{
+    color: #FE9705;
+    font-size: 16px;
+}
+
+
+.buttons {
+    font-family: 'Lobster Two';
+    font-weight: 700;
+}
+
+.buttons button a{
+    color: #fff;
+    font-family: 'Lobster Two';
+    font-weight: 700;
+}
+
+.buttons button:hover{
+    opacity: 0.5;
+}
+
+#checkout {
+    float: right;
+    margin-left: 15px;
+}
+
+#update-cart {
+    float: right;
+}
+
+.button-default {
+    background: #bf1515;
+    border: none;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 3px;
+    float: right;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    cursor: pointer;
+    margin: 1px  7px;
+    bottom: 35px;
+}
+
+.GioHang table td.remove a:hover{
+    color: #FE9705;
+}
+

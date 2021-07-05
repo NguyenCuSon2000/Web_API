@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="CSS/SanPham.css">
+    <link rel="stylesheet" href="CSS/GioHang.css">
+    <script src="./script/script.js"></script>
+    <link rel="stylesheet" href="./font/fontawesome-free-5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+    <header>
+        <div class=" container header-top">
+            <div class="row">
+                <div class="col-sm-4 header-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="col-sm-8 header-info">
+                    <div class="header-cart">
+                        <a href="GioHang.html">
+                            <span class="icon-start">
+                                <img src="img/icon-cart.png" alt="">
+                            </span>
+                            <span class="cart-number">0</span>
+                        </a>
+                    </div>
+                    <div class="header-subnav">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> 1900.636.099</li>
+                            <li><a href="SignUp.html">ĐĂNG KÝ</a></li>
+                            <li><a href="Login.html">ĐĂNG NHẬP</a></li>
+                        </ul>
+                        <p>Miễn phí vận chuyển <span>ĐƠN HÀNG TRÊN 900K</span> </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #ebebeb; width: 100%;"></div>
+        <nav class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 navbar">
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li>
+                                <a href="SanPham.html" class="active">Sản phẩm <i class="fas fa-sort-down"></i></a>
+                                <ul>
+                                    <li>
+                                        <a href="">Rau củ quả</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Thực phẩm tươi sống</a>
+                                    </li>
+                                    <li><a href="">Thực phẩm khô</a></li>
+                                    <li><a href="">Thực phẩm bổ dưỡng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                            <li><a href="TinTuc.html">Tin tức</a></li>
+                            <li><a href="LienHe.html">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md -12 col-sm-4 Search">
+                        <div class="search-bar">
+                            <div class="">
+                                <form action="/search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="text" name="q" placeholder="Tìm kiếm..." autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="wrap-breadcrumb">
+        <div class="clearfix container">
+            <div class="row main-header">							
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5  ">
+                    <ol class="breadcrumb breadcrumb-arrows">
+                        <li><a href="index.html" target="_self">Trang chủ</a></li>
+                        <li><a href="/" target="_self">Giỏ hàng</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- PHẦN GIỎ HÀNG -->
+    <section class="container GioHang">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5  ">
+                <article>
+                    <h4 class="title">Giỏ hàng</h4>
+                </article>
+                <article>
+                    <form action="" method="GET/POST">
+                        <table cellspacing = 5 cellpadding = 5>
+                            <thead>
+                                <th>Xóa</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên Sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </thead>
+                            <tbody id="listCart">
+                                
+                            </tbody>
+                        </table>
+                        <div class="abc">
+                            <button class="btn btn-secondary" onclick="updateCart()">CẬP NHẬT GIỞ HÀNG</button>
+                        </div>
+                        <!-- <div class="buttons">
+                            <button type="submit" id="checkout" class="button-default" name="checkout" value="" title="Thanh toán">Thanh toán &nbsp;&nbsp; 
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button type="submit" id="update-cart"  class="button-default" name="update" value="">
+                                <a href="index.html" title="Quay lại"> <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;  Quay lại </a>
+                            </button>
+                        </div> -->
+                        <div class="col-4 col-s-12">
+                            <div>Tổng số lượng</div>
+                            <div>
+                                <span>Tổng phụ</span>
+                                <span>5000</span>
+                            </div>
+                            <div>
+                                <span>Giao hàng miễn phí</span>
+                            </div>
+                            <div>
+                                <span>Tổng</span>
+                                <span id="spTong">5000</span>
+                            </div>
+                            <div>
+                              
+                                <a class="btn btn-success" href="ThanhToan.html">Tiến hành thanh toán</a>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+        
+        <!-- SCROLL TO TOP -->
+        <div class="Scroll">
+            <a href="#top" id="scrollToTop" title="Lên trên" style="display: block;"  onclick="scrollToTop();return false">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </a>
+        </div>
+    </section>
+    
+    <div class="clear-fix"></div>
+    
+    
+    <!-- PHẦN FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Thời gian</h3>
+                    <hr>
+                    <div class="footer-block-content">
+                        <ul>
+                            <li>
+                                <span class="day">Thứ 2</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 3</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 4</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 5</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-2 col-xs-12 clear-sm column-item">
+                    <h3>Thông tin</h3>
+                    <hr>
+                    <ul class="inner">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="SanPham.html">Sản phẩm</a></li>
+                        <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                        <li><a href="TinTuc.html">Tin tức</a></li>
+                        <li><a href="LienHe.html">Liên hệ</a></li>		
+                    </ul>
+                </section>
+                <section class="col-sm-6 col-md-4 col-xs-12 clear-sm column-item">
+                    <h3>Liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <ul>
+                            <li>
+                                <i class="fas fa-home"></i>101B, Ki Ốt C3, Quỳnh Lôi, Hai Bà Trưng, Hà Nội
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                nguyencuson28102000@gmail.com
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i> 
+                                0963104800
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="widget-social" class="social-icons">
+                        <ul class="list-inline">
+                            <li class="li-social facebook-social">
+                                <a target="_blank" href="#" class="social-wrapper facebook" title="Facebook">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social youtube-social">
+                                <a target="_blank" href="#" class="social-wrapper youtube" title="Youtube">
+                                    <span class="social-icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social google-social">
+                                <a target="_blank" href="#" class="social-wrapper google-plus" title="Google">
+                                    <span class="social-icon">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social twitter-social">
+                                <a target="_blank"  href="#" class="social-wrapper twitter" title="Twitter">
+                                    <span class="social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social instagram-social">
+                                <a target="_blank"  href="#" class="social-wrapper instagram" title="Instagram">
+                                    <span class="social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social message-social">
+                                <a target="_blank"  href="#" class="social-wrapper message" title="Message">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Gửi liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <form name="formLienHe">
+                            <div class="form-wraper">
+                                <ul class="form-list">
+                                    <li class="feilds">
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="text" name="txtTen" id="txtTen" placeholder="Tên Của Bạn...">
+                                            </div>
+                                        </div>
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="email" name="contact[email]" id="email" placeholder="Email của bạn...">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wide feild">
+                                        <div class="input-box">
+                                            <textarea name="contact[body]" class="BinhLuan" id="txtBinhLuan" cols="10" rows="7" placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="buttons-set">
+                                <button type="submit" title="Send" class="button" onclick="KiemTra()">
+                                    <span>Gửi</span>
+                                </button>
+                                <button type="reset" class="button" value="Reset">
+                                    <span>Hủy</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="footer__Copyright">
+            <span >Copyright by &copy; 2020 Nguyen Cu Son</span><br>
+            <span>nguyencuson2000.github.io</span>
+        </div>
+    </footer>
+     <script src="./script/script.js"></script>
+    <script>
+        function ThanhToan() {
+            window.location.href = "ThanhToan.html";
+        }
+
+        var list = JSON.parse(localStorage.getItem('cart'));
+
+        function LoadData() {
+            var str = "";
+            var n = 0;
+            var t = 0;
+            for (x of list) {
+                t += x.donGia * x.quantity;
+                str += `<tr>
+                    <td><i onclick="Xoa(`+ x.maSP + `)" class="fa fa-times-circle" style="font-size:30px;color:red;cursor: pointer;"></i></td>
+                    <td><img style="width: 100px; height: 100px;" src="../`+ x.hinhAnh + `"> </td>
+                    <td>`+ x.tenSP + `</td>
+                    <td>`+ x.donGia + `</td>
+                    <td> 
+                        <button onclick="Giam(`+ x.maSP + `)">-</button>
+                        <input id="q_`+ Number(x.maSP)+`" onchange="updateQuantity(`+ x.maSP + `)" type="text" value="`+ x.quantity + `" style="width: 30px;" >
+                        <button onclick="Tang(`+ x.maSP + `)">+</button>
+                    </td>
+                    <td>`+ (x.donGia * x.quantity) + `</td>
+                </tr>
+                `;
+            }
+            document.getElementById("listCart").innerHTML = str;
+            $("#spTong").text(t);
+        }
+        function XoaCart() {
+            localStorage.setItem('cart', null);
+            location.reload();
+        }
+        function Xoa(id) {
+            var index = list.findIndex(x => x.maSP == id);
+            if (index >= 0) {
+                list.splice(index, 1);
+            }
+            LoadData();
+        }
+        
+        function updateCart() {
+            localStorage.setItem('cart', JSON.stringify(list));
+            alert("Đã cập nhật thông tin giở hàng thành công");
+        }
+        function Tang(id) {
+            var index = list.findIndex(x => x.maSP == id);
+            if (index >= 0) {
+                list[index].quantity += 1; 
+            }
+            LoadData();
+        }
+        function Giam(id) {
+            var index = list.findIndex(x => x.maSP == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity -= 1; 
+            }
+            LoadData();
+        }
+        function updateQuantity(id) {
+            var quantity = Number($('#q_'+id).val());
+            var index = list.findIndex(x => x.maSP == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity = quantity; 
+            }
+            LoadData();
+        }
+        LoadData();
+    </script>
+</body>
+</html>
+

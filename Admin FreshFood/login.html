@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input,
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button{
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    body {
+        width: 300px;
+        margin: 0 auto;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/admin/js/script.js"></script>
+
+<body>
+    <h3>Đăng nhập</h3>
+    <div>
+        <label for="tailkhoan">Tài khoản</label>
+        <input type="text" id="taikhoan" name="taikhoan" placeholder="Nhập tài khoản..">
+        <label for="matkhau">Mật khẩu</label>
+        <input type="password" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu..">
+        <button onclick="Login()" type="button">Đăng nhập</button>
+        <label id="err" style="color: red;"></label>
+    </div>
+    <script>
+        $('#err').html('');
+        // $("#target").submit(function (event) 
+        function Login() {
+            var item = {};
+            item.Username = $("#taikhoan").val();
+            item.Password = $("#matkhau").val();
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:30820/api/User/login",
+                dataType: "json",
+                contentType: 'application/json',
+                data: JSON.stringify(item)
+            }).done(function (data) {
+                debugger;
+                if (data != null && data.message != null && data.message != 'undefined') {
+                    alert(data.message);
+                } else {
+                    localStorage.setItem("user", JSON.stringify(data));
+                    window.location.href = "index.html";
+                }
+               
+            }) .fail(function() {
+              $('#err').html('Thông tin tài khoản hoặc mật khẩu không đúng');
+            });
+            // if (_tailkhoan == 'dongnh' && _matkhau == '123') {
+            //     var user = { tailkhoan: _tailkhoan, matkhau: _matkhau };
+            //     localStorage.setItem('user', JSON.stringify(user));
+            //     window.location.href = "main.html";
+            // } else {
+            //     $('#err').html('Thông tin tài khoản hoặc mật khẩu không đúng');
+            // }
+            // event.preventDefault();
+        };
+    </script>
+</body>
+
+</html>

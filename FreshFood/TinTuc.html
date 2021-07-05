@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/SanPham.css">
+    <link rel="stylesheet" href="./CSS/TinTuc.css">
+    <script src="./script/script.js"></script>
+    
+    <link rel="stylesheet" href="./font/fontawesome-free-5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script async type="text/javascript" src="https://panel.chatcompose.com/static/EN/global/export/js\main.dec259c7.js" user="SonNguyen"></script>  
+</head>
+<body>
+    <header>
+        <div class=" container header-top">
+            <div class="row">
+                <div class="col-sm-4 header-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="col-sm-8 header-info">
+                    <div class="header-cart">
+                        <a href="cart-link">
+                            <span class="icon-start">
+                                <img src="img/icon-cart.png" alt="">
+                            </span>
+                            <span class="cart-number"></span>
+                        </a>
+                    </div>
+                    <div class="header-subnav">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> 1900.636.099</li>
+                            <li><a href="SignUp.html">ĐĂNG KÝ</a></li>
+                            <li><a href="Login.html">ĐĂNG NHẬP</a></li>
+                        </ul>
+                        <p>Miễn phí vận chuyển <span>ĐƠN HÀNG TRÊN 900K</span> </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #ebebeb; width: 100%;"></div>
+        <nav class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 navbar">
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li>
+                                <a href="SanPham.html" class="active">Sản phẩm <i class="fas fa-sort-down"></i></a>
+                                <ul>
+                                    <li>
+                                        <a href="">Rau củ quả</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Thực phẩm tươi sống</a>
+                                    </li>
+                                    <li><a href="">Thực phẩm khô</a></li>
+                                    <li><a href="">Thực phẩm bổ dưỡng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                            <li><a href="TinTuc.html">Tin tức</a></li>
+                            <li><a href="LienHe.html">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md -12 col-sm-4 Search">
+                        <div class="search-bar">
+                            <div class="">
+                                <form action="/search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="text" name="q" placeholder="Tìm kiếm..." autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="wrap-breadcrumb">
+        <div class="clearfix container">
+            <div class="row main-header">							
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5  ">
+                    <ol class="breadcrumb breadcrumb-arrows">
+                        <li><a href="/" target="_self">Trang chủ</a></li>
+                        <li class="active"><span>Blog - Tin tức</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="container content">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12 leftsidebar-col">
+                <div class="group_sidebar">
+                    <div class="list-group navbar-inner">
+                        <div class="mega-left-title btn-navbar title-hidden-sm">
+                            <h3 class="sb-title">Danh mục</h3>
+                        </div>
+                        <ul class="nav" id="menu-blog">
+                            <li class="first">
+                                <a href="index.html" title="Trang chủ"><span>Rau củ quả</span></a>
+                            </li>
+                            <li>
+                                <a href="GioiThieu.html" title="Giới thiệu"><span>Thực phẩm tươi sống</span></a>
+                            </li>
+                            <li>
+                                <a href="ThucDon.html" title="Thực đơn"><span>Thực phẩm khô</span></a>
+                            </li>
+                            <li class="current active">
+                                <a href="TinTuc.html" title="Tin tức"><span>Thực phẩm bổ dưỡng</span></a>
+                            </li>
+                            <li>
+                                <a href="GioHang.html" title="Đặt hàng"><span>Thực phẩm chế biến</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-group_l banner-left hidden-sm hidden-xs">
+                        <a href=""><img src="img/quangcao4.png" alt=""></a>
+                    </div>
+                    <div class="list-group_2 navbar-product">
+                        <div class="mega-left-title btn-navbar title-hidden-sm">
+                            <h3 class="Content-title">Bài viết mới nhất</h3>
+                        </div>
+                        <div class="seller-item">
+                            <div class="sellers-image">
+                                <a href="" class="products-block-image content_img clearfix">
+                                    <img src="img/ComChay.png" alt="">
+                                </a>
+                            </div>
+                            <div class="post-Content has-sellers-img ">
+                                <a href="">Cơm cháy kho quẹt món ăn dân dã nhưng ngon "vô đối" ở miền Tây</a><br>
+                                <span class="date"> <i class="far fa-calendar-alt"></i>15/12/2016</span>
+                            </div>
+                        </div>
+                        <div class="seller-item">
+                            <div class="sellers-image">
+                                <a href="" class="products-block-image content_img clearfix">
+                                    <img src="img/ComChay.png" alt="">
+                                </a>
+                            </div>
+                            <div class="post-Content has-sellers-img ">
+                                <a href="">Cơm cháy kho quẹt món ăn dân dã nhưng ngon "vô đối" ở miền Tây</a><br>
+                                <span class="date"> <i class="far fa-calendar-alt"></i>15/12/2016</span>
+                            </div>
+                        </div>
+                        <div class="seller-item">
+                            <div class="sellers-image">
+                                <a href="" class="products-block-image content_img clearfix">
+                                    <img src="img/ComChay.png" alt="">
+                                </a>
+                            </div>
+                            <div class="post-Content has-sellers-img ">
+                                <a href="">Cơm cháy kho quẹt món ăn dân dã nhưng ngon "vô đối" ở miền Tây</a><br>
+                                <span class="date"> <i class="far fa-calendar-alt"></i>15/12/2016</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12 " id="blog-container" data-sticky_column="">
+                <div class="row">
+                    <div class="articles clearfix" id="layout-page">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h1>Tin tức</h1>
+                        </div>
+                        <!-- Begin: Nội dung blog -->      
+                        <div class="news-content">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12 col-sm-12 img-article">
+                                    <div class="art-img">
+                                        <img src="//file.hstatic.net/1000150349/article/ww_large.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <!-- Begin: Nội dung bài viết -->
+                                    <h2 class="title-article"><a href="/blogs/news/com-chay-kho-quet-mon-an-dan-da-nhung-ngon-vo-doi-o-mien-tay">Cơm cháy kho quẹt món ăn dân dã nhưng ngon "vô đối" ở miền Tây</a></h2>
+                                    <div class="body-content">
+                                        <ul class="info-more">
+                                            <li><i class="far fa-calendar-alt"></i><time pubdate="" datetime="2016-12-15">15/12/2016</time></li>
+                                            <li><i class="far fa-file-alt"></i></i><a href="#"> Tin tức	</a> </li>
+                                        </ul>
+                                        <p>Cơm cháy chấm kho quẹt là một món ăn quen thuộc của người miền Tây. Không quá cầu kì trong thành phần cũng như cách chế biến, nhưng thứ đặc sản dân giã này chính là biểu hiện của sự...</p>
+                                    </div>
+                                    <!-- End: Nội dung bài viết -->	
+                                    <a class="readmore btn-rb clear-fix" href="/blogs/news/com-chay-kho-quet-mon-an-dan-da-nhung-ngon-vo-doi-o-mien-tay" role="button">Xem tiếp <span class="fa fa-angle-double-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-content">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12 col-sm-12 img-article">
+                                    <div class="art-img">
+                                        <img src="//file.hstatic.net/1000150349/article/352x176_a3794c95-018e-41f8-b723-270a7bfe189c_large.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class=" col-md-7 col-sm-12  col-xs-12">
+                                    <!-- Begin: Nội dung bài viết -->
+                                    <h2 class="title-article"><a href="/blogs/news/chet-me-truoc-nhung-mon-an-ngon-truyen-thong-an-do">"Chết mê" trước những món ăn ngon truyền thống Ấn Độ</a></h2>
+                                    <div class="body-content">
+                                        <ul class="info-more">
+                                            <li><i class="far fa-calendar-alt"></i><time pubdate="" datetime="2016-12-15">15/12/2016</time></li>
+                                            <li><i class="far fa-file-alt"></i><a href="#"> Tin tức	</a> </li>
+                                        </ul>
+                                        <p>Ẩm thực Ấn Độ rất đa dạng về thành phần, hương vị, cách chế biến. Bên cạnh đó món ăn Ấn còn rất đặc trưng bởi sự kết hợp của các loại gia vị.Bánh mì NaanĐây là loại bánh mì...</p>
+                                    </div>
+                                    <!-- End: Nội dung bài viết -->	
+                                    <a class="readmore btn-rb clear-fix" href="/blogs/news/chet-me-truoc-nhung-mon-an-ngon-truyen-thong-an-do" role="button">Xem tiếp <span class="fa fa-angle-double-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-content">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12 col-sm-12 img-article">
+                                    <div class="art-img">
+                                        <img src="//file.hstatic.net/1000150349/article/bb_large.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class=" col-md-7 col-sm-12  col-xs-12">
+                                    <!-- Begin: Nội dung bài viết -->
+                                    <h2 class="title-article"><a href="/blogs/news/an-chay-nhung-dieu-ban-can-phai-biet">Ăn chay những điều bạn cần phải biết</a></h2>
+                                    <div class="body-content">
+                                        <ul class="info-more">
+                                            <li><i class="far fa-calendar-alt"></i></i><time pubdate="" datetime="2016-12-15">15/12/2016</time></li>
+                                            <li><i class="far fa-file-alt"></i><a href="#"> Tin tức	</a> </li>
+                                        </ul>
+                                        <p>Ăn chay hiện nay đang trở thành thói quen của nhiều người, ẩm thực chay cùng các món chay ngon từ đó cũng trở nên phổ biến hơn trước. Tuy vậy các bạn đã biết hết những tác hại và...</p>
+                                    </div>
+                                    <!-- End: Nội dung bài viết -->	
+                                    <a class="readmore btn-rb clear-fix" href="/blogs/news/an-chay-nhung-dieu-ban-can-phai-biet" role="button">Xem tiếp <span class="fa fa-angle-double-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-content">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12 col-sm-12 img-article">
+                                    <div class="art-img">
+                                        <img src="//file.hstatic.net/1000150349/article/12_large.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class=" col-md-7 col-sm-12  col-xs-12">
+                                    <!-- Begin: Nội dung bài viết -->
+                                    <h2 class="title-article"><a href="/blogs/news/am-thuc-viet-nam-tung-buoc-chinh-phuc-the-gioi">Ẩm thực Việt Nam từng bước chinh phục thế giới</a></h2>
+                                    <div class="body-content">
+                                        <ul class="info-more">
+                                            <li><i class="far fa-calendar-alt"></i></i><time pubdate="" datetime="2016-12-15">15/12/2016</time></li>
+                                            <li><i class="far fa-file-alt"></i><a href="#"> Tin tức	</a> </li>
+                                        </ul>
+                                        <p>Món ăn Việt ngày càng được nhiều quốc gia trên thế giới biết đến. Điều đó càng được khẳng định, khi tháng 8/2012 vừa qua tại Faridabad, Ấn Độ, Tổ chức Kỷ lục châu Á đã chính thức công nhận...</p>
+                                    </div>
+                                    <!-- End: Nội dung bài viết -->	
+                                    <a class="readmore btn-rb clear-fix" href="/blogs/news/am-thuc-viet-nam-tung-buoc-chinh-phuc-the-gioi" role="button">Xem tiếp <span class="fa fa-angle-double-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <div id="pagination">
+                            <span class="page-node current">1</span>
+                            <a href="ThucDonMonBanh2.html" class="page-node">2</a>
+                            <a href="ThucDonMonBanh2.html" class="TrangSau">
+                                <span> 
+                                    Trang sau
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SCROLL TO TOP -->
+        <div class="Scroll">
+            <a href="#top" id="scrollToTop" title="Lên trên" style="display: block;"  onclick="scrollToTop();return false">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </a>
+        </div>
+    </section>
+    
+    <div class="clear-fix"></div>
+    
+    <!-- PHẦN FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Thời gian</h3>
+                    <hr>
+                    <div class="footer-block-content">
+                        <ul>
+                            <li>
+                                <span class="day">Thứ 2</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 3</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 4</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                            <li>
+                                <span class="day">Thứ 5</span>
+                                <span class="hour">8:00 - 21:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-2 col-xs-12 clear-sm column-item">
+                    <h3>Thông tin</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="SanPham.html">Sản phẩm</a></li>
+                        <li><a href="GioiThieu.html">Giới thiệu</a></li>
+                        <li><a href="TinTuc.html">Tin tức</a></li>
+                        <li><a href="LienHe.html">Liên hệ</a></li>	
+                    </ul>
+                </section>
+                <section class="col-sm-6 col-md-4 col-xs-12 clear-sm column-item">
+                    <h3>Liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <ul>
+                            <li>
+                                <i class="fas fa-home"></i>101B, Ki Ốt C3, Quỳnh Lôi, Hai Bà Trưng, Hà Nội
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                nguyencuson28102000@gmail.com
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i> 
+                                0963104800
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="widget-social" class="social-icons">
+                        <ul class="list-inline">
+                            <li class="li-social facebook-social">
+                                <a target="_blank" href="#" class="social-wrapper facebook" title="Facebook">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social youtube-social">
+                                <a target="_blank" href="#" class="social-wrapper youtube" title="Youtube">
+                                    <span class="social-icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social google-social">
+                                <a target="_blank" href="#" class="social-wrapper google-plus" title="Google">
+                                    <span class="social-icon">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social twitter-social">
+                                <a target="_blank"  href="#" class="social-wrapper twitter" title="Twitter">
+                                    <span class="social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social instagram-social">
+                                <a target="_blank"  href="#" class="social-wrapper instagram" title="Instagram">
+                                    <span class="social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="li-social message-social">
+                                <a target="_blank"  href="#" class="social-wrapper message" title="Message">
+                                    <span class="social-icon">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-md-3 col-xs-12 clear-sm column-item">
+                    <h3>Gửi liên hệ</h3>
+                    <hr>
+                    <div class="footer-block">
+                        <form name="formLienHe">
+                            <div class="form-wraper">
+                                <ul class="form-list">
+                                    <li class="feilds">
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="text" name="txtTen" id="txtTen" placeholder="Tên Của Bạn...">
+                                            </div>
+                                        </div>
+                                        <div class="feild">
+                                            <div class="input-box">
+                                                <input type="email" name="contact[email]" id="email" placeholder="Email của bạn...">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wide feild">
+                                        <div class="input-box">
+                                            <textarea name="contact[body]" class="BinhLuan" id="txtBinhLuan" cols="10" rows="7" placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="buttons-set">
+                                <button type="submit" title="Send" class="button" onclick="KiemTra()">
+                                    <span>Gửi</span>
+                                </button>
+                                <button type="reset" class="button" value="Reset">
+                                    <span>Hủy</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="footer__Copyright">
+            <span >Copyright by &copy; 2020 Nguyen Cu Son</span><br>
+            <span>nguyencuson2000.github.io</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

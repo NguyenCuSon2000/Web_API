@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="CSS/Login.css">
+    <script>
+        function user_Onblur() {
+            user=formSignUp.name.value;
+            var loiUser=document.getElementById("IDuser");
+            
+            if(user=="") {
+                loiUser.innerHTML="Tên đăng nhập không được bỏ trống !";
+                formSignUp.name.focus();
+                return;
+            }
+            loiUser.innerHTML="";
+        }
+        // Kiểm tra email
+        function checkEmail_Onblur() {
+            mail = formSignUp.email.value;
+            var loiEmail=document.getElementById("IDemail");
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            kq = filter.test(mail);
+            if(mail=="") {
+                loiEmail.innerHTML = "Email không được bỏ trống !";
+                formSignUp.email.focus();
+                return;
+            }
+            loiEmail.innerHTML="";
+            
+            if (!kq) {
+                loiEmail.innerHTML = "Hãy nhập địa chỉ email hợp lệ.\nExample@gmail.com";
+                formSignUp.email.focus();
+                return;
+            }
+            loiEmail.innerHTML="";
+        }
+    </script>    
+    <script src=" https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="bg-img">
+        <div class="content">
+            <header>SignUp Form</header>
+            <form action="#" name="formSignUp" id="SignUp">
+                <div class="field">
+                    <span class="fa fa-user"></span>
+                    <input type="text" required="" placeholder="Tên đăng nhập" id="name" name="name" onblur="user_Onblur();">
+                </div>
+                <span id="IDuser" style="color:#FF0000; font-size:18px"></span>
+                <div class="field email">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" required="" placeholder="Email" id="email" name="email" onblur="checkEmail_Onblur();">
+                </div>
+                <span id="IDemail" style="color:#FF0000; font-size:18px"></span>
+                <div class="field space">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" id="password" class="pass-key" required="" placeholder="Password">
+                </div>
+                <div class="pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="field">
+                    <input type="submit" value="SIGN UP">
+                </div>
+            </form>
+            <div class="login">
+                Or SignUp with
+            </div>
+            <div class="links">
+                <div class="facebook">
+                    <i class="fab fa-facebook-f"><span>Facebook</span></i>
+                </div>
+                <div class="google">
+                    <i class="fab fa-google"><span>Google</span></i>
+                </div>
+            </div>
+            <div class="signup">
+                Don't have account?
+                <a href="SignUp.html">Signup Now</a>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
